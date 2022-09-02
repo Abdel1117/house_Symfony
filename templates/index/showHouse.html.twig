@@ -1,0 +1,14 @@
+  {% extends "base.html.twig" %} 
+
+
+{% block body %}
+
+ <div class="col-3">
+            <figure class="figure">
+                 <h3 class="text-center">{{ Appartement.name }}</h3>
+                <img src="https://via.placeholder.com/300" class="figure-img img-fluid rounded" alt="House selled by our society">
+                 <figcaption class="figure-caption text-center">{{ Appartement.price }} €</figcaption>
+            </figure>
+        </div>
+
+{% endblock body %}

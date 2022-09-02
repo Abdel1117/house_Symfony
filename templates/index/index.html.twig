@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello IndexController!{% endblock %}
+{% block body %}
+    
+    <div class="row">
+        <form>
+            <select>
+                {% for tag in Tags %}
+                <option> {{ tag.tag_name}} </option>
+
+                {% endfor %}
+            </select>
+        </form>
+    </div>
+    <div class="row">
+    {% for appartement in appartements %}   
+        <div class="col-3">
+            <figure class="figure">
+                 <h3 class="text-center">{{ appartement.name }}</h3>
+                <img src="https://via.placeholder.com/300" class="figure-img img-fluid rounded" alt="House selled by our society">
+                 <figcaption class="figure-caption text-center">{{ appartement.price }} €</figcaption>
+            </figure>
+             <a href="{{path('showHouse',{"produitId": appartement.id})}}" class="btn btn-primary"> Voir appartement</a> 
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}
