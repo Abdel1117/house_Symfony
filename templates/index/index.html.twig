@@ -2,16 +2,17 @@
 
 {% block title %}Hello IndexController!{% endblock %}
 {% block body %}
-    
     <div class="row">
-        <form>
+        <form >
             <select>
                 {% for tag in Tags %}
-                <option> {{ tag.tag_name}} </option>
-
+                <option> 
+                    {{ tag.TagName}} 
+                </option>
+                
                 {% endfor %}
             </select>
-        </form>
+        </form> 
     </div>
     <div class="row">
     {% for appartement in appartements %}   

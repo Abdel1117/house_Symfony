@@ -22,6 +22,7 @@ class IndexController extends AbstractController
         $tags_repository = $doctrine->getRepository(Tags::class);
         
         $tags = $tags_repository->findAll();
+        
         dump($tags);
 
         return $this->render('index/index.html.twig', [

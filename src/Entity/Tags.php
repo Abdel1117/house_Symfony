@@ -21,9 +21,13 @@ class Tags
     #[ORM\ManyToMany(targetEntity: Apartement::class, mappedBy: 'category')]
     private $apartements_id;
 
+    #[ORM\Column(type: 'string', length: 255)]
+    private $tags_name;
+
     public function __construct()
     {
         $this->apartements_id = new ArrayCollection();
+        
     }
 
     public function getId(): ?int
@@ -66,6 +70,18 @@ class Tags
         if ($this->apartements_id->removeElement($apartementsId)) {
             $apartementsId->removeCategory($this);
         }
+
+        return $this;
+    }
+
+    public function getTagsName(): ?string
+    {
+        return $this->tags_name;
+    }
+
+    public function setTagsName(string $tags_name): self
+    {
+        $this->tags_name = $tags_name;
 
         return $this;
     }
